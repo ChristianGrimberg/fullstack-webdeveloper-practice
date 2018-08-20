@@ -1,0 +1,21 @@
+body
+{
+    background-color:grey;
+}
+h1
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:blanchedalmond;
+}
+p
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color:whitesmoke;
+}
+h2
+{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+    color:salmon;
+}
