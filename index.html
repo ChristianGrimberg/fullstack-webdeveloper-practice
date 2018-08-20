@@ -1,30 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tu peso en Marte y Jupiter</title>
+    <meta charset="UTF-8" />
+    <title>Tu peso en Marte y Júpiter</title>
     <style>
         body
         {
-            background-color: grey;
+            background-color:grey;
         }
         h1
         {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color: blanchedalmond;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:blanchedalmond;
         }
         p
         {
             font-family: Arial, Helvetica, sans-serif;
-            color: whitesmoke;
+            font-style: italic;
+            color:whitesmoke;
+        }
+        h2
+        {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 22px;
+            color:salmon;
         }
     </style>
 </head>
 <body>
     <h1>Tu peso en otro Planeta</h1>
-    <p>A que no sabias que en otro planeta tu pesas distinto.</p>
-    <script>
-        var earthGravity=9.81;
-        document.writeln("<p>"+"La gravedad de la tierra es "+earthGravity+"</p>");
+    <p>A que no sabías que en otro planeta tu peso es diferente.</p>
+    <script type="text/javascript">
+        var gravity = 0;
+        var weight;
+        var selection;
+        var planet;
+
+        weight = prompt("Indica cual es tu peso en kilos");
+        weight = parseFloat(weight);
+        selection = prompt("Para saber tu peso indica:\n1) Marte\n2) Júpiter");
+        selection = parseInt(selection);
+
+        switch (selection)
+        {
+            case 1:
+                planet="Marte";
+                break;
+            case 2:
+                planet="Júpiter";
+                break;   
+            default:
+                planet="La Tierra";
+                break;
+        }
+
+        document.writeln("<h2>Tu peso en "+planet+" es de "+weight+" kilos.</h2>");
+        document.write("<p>Archivo situado en "+window.location+"</p>");
     </script>
 </body>
 </html>
