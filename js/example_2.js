@@ -16,6 +16,7 @@ draw = element2.getContext("2d");
 
 console.log(draw);
 
+/**< Dibujo de lineas en canvas con el id correspondiente */
 drawLine("red", 100, 100, 200, 200);
 drawLine("blue", 200, 100, 100, 200);
 drawLine("yellow", 100, 150, 200, 150);
