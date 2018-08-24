@@ -23,25 +23,32 @@ function drawLine(color, x_initial, y_initial, x_final, y_final)
     drawContext.closePath();   
 }
 
-function drawLinesAfterClick()
+function repeaterLines(color, x_initial, y_final)
 {
     var yi, xf;
-    var color = "#FAA";
 
+    for(var i=0; i<lines; i++)
+    {
+        yi = space * i;
+        xf = space * (i + 1);
+        drawLine(color, x_initial, yi, xf, y_final);
+    }
+}
+
+function drawLinesAfterClick()
+{
     clearCanvas();
     lines = parseInt(txtQtyLines.value);
     space = width/lines;   
 
     if(lines<width)
     {
-        for(var i = 0; i<lines; i++)
-        {
-            yi = space * i;
-            xf = space * (i + 1);
-            drawLine(color, 0, yi, xf, width);
-        }
+        repeaterLines("#AFF", 0, width);
+        repeaterLines("#AFF", width, 0);
     }    
 
-    drawLine(color, 1, 1, 1, height-1);
-    drawLine(color, 1, width-1, width-1, width-1);
+    drawLine("#FAA", 1, 1, 1, height-1);
+    drawLine("#FAA", 1, 1, height-1, 1);
+    drawLine("#FAA", 1, width-1, height-1, height-1);
+    drawLine("#FAA", width-1, width-1, height-1, 1);
 }
