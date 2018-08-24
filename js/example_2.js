@@ -1,20 +1,21 @@
 var element2;
 var draw;
+drawingLines = document.getElementById("drawingLines");
+txtQtyLines = document.getElementById("txtQtyLines");
+btnSendQtyLines = document.getElementById("btnSendQtyLines");
+drawContext = drawingLines.getContext("2d");
 
 function drawLine(color, x_initial, y_initial, x_final, y_final)
 {
-    draw.beginPath();
-    draw.strokeStyle = color;
-    draw.moveTo(x_initial, y_initial);
-    draw.lineTo(x_final, y_final);
-    draw.stroke();
-    draw.closePath();   
+    drawContext.beginPath();
+    drawContext.strokeStyle = color;
+    drawContext.moveTo(x_initial, y_initial);
+    drawContext.lineTo(x_final, y_final);
+    drawContext.stroke();
+    drawContext.closePath();   
 }
 
-element2 = document.getElementById("example_2");
-draw = element2.getContext("2d");
-
-console.log(draw);
+//console.log(drawContext);
 
 /**< Dibujo de lineas en canvas con el id correspondiente */
 drawLine("red", 100, 100, 200, 200);
