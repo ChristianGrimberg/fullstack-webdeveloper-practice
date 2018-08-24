@@ -1,11 +1,13 @@
 var element2;
 var draw;
+var width;
 drawingLines = document.getElementById("drawingLines");
 txtQtyLines = document.getElementById("txtQtyLines");
 btnSendQtyLines = document.getElementById("btnSendQtyLines");
 
 drawContext = drawingLines.getContext("2d");
-btnSendQtyLines.addEventListener("click", drawLineAfterClick);
+width = drawingLines.width;
+btnSendQtyLines.addEventListener("click", drawLinesAfterClick);
 
 function drawLine(color, x_initial, y_initial, x_final, y_final)
 {
@@ -17,11 +19,20 @@ function drawLine(color, x_initial, y_initial, x_final, y_final)
     drawContext.closePath();   
 }
 
-function drawLineAfterClick()
+function drawLinesAfterClick()
 {    
-    /**< Dibujo de lineas en canvas con el id correspondiente */
-    drawLine("red", 100, 100, 200, 200);
-    drawLine("blue", 200, 100, 100, 200);
-    drawLine("yellow", 100, 150, 200, 150);
-    drawLine("pink", 150, 100, 150, 200);
+    var lines = parseInt(txtQtyLines.value);
+    var yi, xf;
+    var color = "#FAA";
+    var space = width / lines;
+
+    for(var i = 0; i<lines; i++)
+    {
+        yi = space * i;
+        xf = space * (i + 1);
+        drawLine(color, 0, yi, xf, width);
+    }
+
+    drawLine(color, 1, 1, 1, width-1);
+    drawLine(color, 1, width-1, width-1, width-1);
 }
